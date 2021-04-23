@@ -9,7 +9,7 @@ class TasksController
   # 1. Display all Tasks
   def display
     tasks = @task_repository.all
-  
+
     # Display the list tasks to the user
     @tasks_view.display(tasks)
   end
