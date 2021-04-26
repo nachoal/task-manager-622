@@ -13,7 +13,8 @@ class Router
       puts "2. Add a new Task"
       puts "3. Mark a Task as completed"
       puts "4. Delete a Task"
-      puts "5. Exit"
+      puts "5. Retrieve Tasks from internet"
+      puts "6. Exit"
       puts "Please pick an option:"
       print "> "
 
@@ -29,6 +30,8 @@ class Router
       when "4"
         @tasks_controller.delete
       when "5"
+        @tasks_controller.retrieve_tasks
+      when "6"
         @running = false
         puts "The struggle ends when the gratitude begins. -Neale Donald Walsch"
       else

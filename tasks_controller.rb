@@ -1,4 +1,5 @@
 require_relative 'tasks_view'
+require_relative 'task_fetcher'
 
 class TasksController
   def initialize(task_repository)
@@ -40,5 +41,20 @@ class TasksController
     # 2. find index
     # 3. Delete
     @task_repository.delete(task_index)
+  end
+
+  def retrieve_tasks
+    # ? 1.Display the message to the user "Fetching tasks"
+    # puts "Fetching Tasks..."
+    # ? 2. Use nokogiri to connect to website
+    # ? 3. Check the website for the selectors to use
+    # ? 4. Select the tasks
+    # ? 5. Scrape tasks 
+    # ? 6. Create task instances based on the information from website
+    # ? 7. task = Task.new
+    # ? 8. Save task into DB (csv) with the repository
+
+    tasks = TaskFetcher.new.fetch
+    tasks.each { |task| @task_repository.add(task)}
   end
 end
